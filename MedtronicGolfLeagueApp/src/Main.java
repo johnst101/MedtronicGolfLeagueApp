@@ -5,41 +5,40 @@ public class Main {
 	
 	public static void main(String[] args) {
 		//declare variables
-		int menuChoice;
+		int menuChoice = 0;
 
 		//main actions
-		displayMenu();
-		menuChoice = getMenuChoice();
+		while (menuChoice != 6) {
+			displayMainMenu();
+			menuChoice = getMenuChoice();
 		
-		//FIX ME: FIGURE OUT THE LOOP ON THIS
-		if (menuChoice > 0 && menuChoice < 7) {
 			if (menuChoice == 1) {
 				System.out.println("Choice 1 Selected");
 			}
-			if (menuChoice == 2) {
+			else if (menuChoice == 2) {
 				System.out.println("Choice 2 Selected");
 			}
-			if (menuChoice == 3) {
+			else if (menuChoice == 3) {
 				System.out.println("Choice 3 Selected");
 			}
-			if (menuChoice == 4) {
+			else if (menuChoice == 4) {
 				System.out.println("Choice 4 Selected");
 			}
-			if (menuChoice == 5) {
+			else if (menuChoice == 5) {
 				System.out.println("Choice 5 Selected");
 			}
-			if (menuChoice == 6) {
+			else if (menuChoice == 6) {
 				System.out.println("====== QUITTING PROGRAM ======");
 			}
-		}
-		else {
-			System.out.println("INVALID CHOICE. Please enter a number on the menu.");
-			displayMenu();
-			getMenuChoice();
+			else {
+				System.out.println("INVALID CHOICE. Please enter a number on the menu.");
+			}
+			
+			System.out.println();
 		}
 	}
 
-	public static void displayMenu() {
+	public static void displayMainMenu() {
 		System.out.println("====== MAIN MENU ======");
 		System.out.println("1) Schedule");
 		System.out.println("2) Teams");
@@ -47,12 +46,11 @@ public class Main {
 		System.out.println("4) League Roster");
 		System.out.println("5) Rules");
 		System.out.println("6) Quit App");
+		System.out.println();
 	}
 	
 	public static int getMenuChoice() {
-		int menuChoice;
-		
 		System.out.print("Enter menu choice number: ");
-		return menuChoice = scnr.nextInt();
+		return scnr.nextInt();
 	}
 }
